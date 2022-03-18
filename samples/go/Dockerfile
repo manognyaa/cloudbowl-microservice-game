@@ -4,6 +4,6 @@ COPY . .
 RUN go mod download
 RUN go build -o /bin/app
 
-FROM alpine
+FROM alpine:3.15
 COPY --from=build /bin/app /bin/app
 ENTRYPOINT ["/bin/app"]
